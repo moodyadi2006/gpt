@@ -1,0 +1,51 @@
+# Python cache/bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Training artifacts (large/generated)
+outputs/
+runs/
+wandb/
+mlruns/
+
+# Local data artifacts
+data/*.bin
+data/*.pt
+data/*.pth
+data/*.npy
+data/*.npz
+
+# Keep raw/source datasets by default; add more patterns if needed.
