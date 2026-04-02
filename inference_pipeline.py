@@ -1,6 +1,7 @@
 import torch
-from classes.model import SimpleModel
-from classes.transformer import TransformerBlock
+import time
+from classes.model_v1 import SimpleModel
+from classes.transformer_v1 import TransformerBlock
 from classes.final_linear_projection import FinalProjection
 from classes.tokenizer import CharTokenizer
 
@@ -20,7 +21,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Load tokenizer
 # ------------------------
 tokenizer = CharTokenizer()
-tokenizer.load("checkpoints/tokenizer.json")
+tokenizer.load("checkpoints/char_tokenizer.json")
 
 vocab_size = tokenizer.vocab_size
 
@@ -104,5 +105,11 @@ while True:
     if prompt.lower() == "exit":
         break
 
+    start = time.time()   # ⏱ start
+
     output = generate(prompt)
+
+    end = time.time()     # ⏱ end
+
     print("\nGenerated:\n", output)
+    print(f"\nTime taken: {end - start:.4f} seconds")

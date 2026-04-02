@@ -2,12 +2,12 @@ import torch
 import os
 from torch.utils.data import DataLoader
 
-from classes.model import SimpleModel
-from classes.transformer import TransformerBlock
+from classes.model_v1 import SimpleModel
+from classes.transformer_v1 import TransformerBlock
 from classes.final_linear_projection import FinalProjection
 from classes.cross_entropy_loss import CrossEntropyLossLayer
 from classes.tokenizer import CharTokenizer
-from classes.dataset import TextDataset
+from classes.dataset_v1 import TextDataset
 
 """
 Your training pipeline has been significantly improved by adding a set of practical optimizations that make it not just functional, but stable, efficient, and closer to real-world systems. First, you ensured proper **filesystem handling** by creating a `checkpoints/` directory before saving models, preventing runtime errors and enabling organized checkpoint storage. You introduced **device management** by moving both the model and data to the appropriate device (`CPU` or `GPU`) using `.to(device)`, which dramatically improves performance since transformers rely heavily on parallel matrix computations that GPUs handle efficiently. You also set the model to **training mode using `.train()`**, which is essential for correctly activating training-specific behaviors like dropout (even if not currently used, it ensures future correctness).

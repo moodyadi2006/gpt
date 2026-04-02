@@ -1,12 +1,12 @@
 import torch
 from torch.utils.data import DataLoader
 
-from classes.model import SimpleModel
-from classes.transformer import TransformerBlock
+from classes.model_v1 import SimpleModel
+from classes.transformer_v1 import TransformerBlock
 from classes.final_linear_projection import FinalProjection
 from classes.cross_entropy_loss import CrossEntropyLossLayer
 from classes.tokenizer import CharTokenizer
-from classes.dataset import TextDataset
+from classes.dataset_v1 import TextDataset
 
 # ------------------------
 # Load Data
